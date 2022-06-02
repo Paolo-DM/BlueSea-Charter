@@ -1,0 +1,12 @@
+.logo-img {
+  width: 60px;
+}
+
+.navbar {
+  background-color: #083b4c;
+}
+
+.navbar-nav > * {
+  /* color: white; */
+  font-size: 1.3rem;
+}

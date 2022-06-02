@@ -1,0 +1,19 @@
+.hero-text-container {
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 7%;
+}
+
+.hero-img-container {
+  position: relative;
+  height: 330px;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-img-container {
+    height: 250px;
+  }
+}
