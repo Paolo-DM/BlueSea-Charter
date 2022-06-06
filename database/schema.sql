@@ -55,6 +55,24 @@ CREATE TABLE "public"."categories" (
   OIDS=FALSE
 );
 
+CREATE TABLE "public"."boats" (
+	"boatId" serial NOT NULL,
+	"name" TEXT NOT NULL,
+	"model" TEXT NOT NULL,
+  "speed" TEXT NOT NULL,
+	"motorization" TEXT NOT NULL,
+	"length" TEXT NOT NULL,
+	"capacity" integer NOT NULL,
+	"beds" TEXT NOT NULL,
+	"kitchen" integer NOT NULL,
+  "imageUrl" TEXT NOT NULL,
+  "internal1" TEXT NOT NULL,
+  "internal2" TEXT NOT NULL,
+  "internal3" TEXT NOT NULL,
+	CONSTRAINT "boats_pk" PRIMARY KEY ("boatId")
+) WITH (
+  OIDS=FALSE
+);
 
 
 

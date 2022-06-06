@@ -1,0 +1,24 @@
+.boat-container {
+  background-color: aqua;
+}
+
+.boat-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.boat-gallery-btn {
+  width: fit-content;
+  float: right;
+}
+
+.service-icon {
+  font-size: 1.5rem;
+  vertical-align: text-bottom;
+}
+
+.boat-img {
+  height: 400px;
+  object-fit: cover;
+}

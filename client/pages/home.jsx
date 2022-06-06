@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import SectionsDivider from '../components/SectionsDivider';
 import RowOfCards from '../components/RowOfCards';
@@ -82,21 +81,30 @@ const images = [
   },
   {
     id: 5,
+    name: 'FaraglioniAerea',
+    url: '/img/home/carousel/apreaCapri.jpg'
+  },
+  {
+    id: 6,
     name: 'PositanoGiorno',
     url: '/img/home/carousel/6-posgiorno.jpg'
   },
   {
-    id: 6,
+    id: 7,
     name: 'Faraglioniverticale',
     url: '/img/home/carousel/7-faraglionivert.jpg'
   }
 
 ];
 
-export default function Home(props) {
-  return (
+export default class Home extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
     <div>
-      <Navbar />
       <Hero
         title="BlueSea Charter"
         subtitle="Sailing in the Mediterranean Sea"
@@ -109,5 +117,6 @@ export default function Home(props) {
       <SectionsDivider text="Gallery" />
       <Carousel images={images}/>
     </div>
-  );
+    );
+  }
 }

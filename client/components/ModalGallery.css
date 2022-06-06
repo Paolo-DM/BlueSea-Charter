@@ -1,0 +1,19 @@
+.modal-gallery-img {
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.modal-gallery-img:hover {
+  transform: scale(0.98);
+}
+
+.modal-gallery-img:active {
+  transform: scale(2.5);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-gallery-img:active {
+    transform: scale(1.4);
+  }
+}

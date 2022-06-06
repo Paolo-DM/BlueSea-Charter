@@ -1,0 +1,7 @@
+.photo-row {
+  padding: 0.6rem 0;
+}
+
+.excursion-img:hover {
+  transform: scale(0.98);
+}

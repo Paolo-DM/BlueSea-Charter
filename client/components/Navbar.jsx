@@ -4,7 +4,7 @@ import './Navbar.css';
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-md navbar-dark">
-      <div className="container">
+      <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img
             src="../img/logo.png"
@@ -30,11 +30,20 @@ function Navbar() {
             <a className="nav-link active" aria-current="page" href="#">
               Home
             </a>
-            <a className="nav-link" href="#">
-              Features
+            <a className="nav-link" href="#excursions">
+              Excursions
+            </a>
+            <a className="nav-link" href="#fleet">
+              The Fleet
             </a>
             <a className="nav-link" href="#">
-              Pricing
+              Wedding Proposal
+            </a>
+            <a className="nav-link" href="#">
+              Diving
+            </a>
+            <a className="nav-link" href="#">
+              Account
             </a>
           </div>
         </div>

@@ -9,7 +9,7 @@
   position: relative;
   height: 330px;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
 }
 
 @media screen and (max-width: 768px) {
