@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-import ModalGallery from './ModalGallery.css';
+import './ModalGallery.css';
 
 function MyVerticallyCenteredModal(props) {
   console.log('MODAL:', props);
