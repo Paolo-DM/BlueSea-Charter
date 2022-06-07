@@ -1,0 +1,17 @@
+.form-text-container {
+  margin-top: 5rem;
+}
+
+.error-msg {
+  color: red;
+}
+
+.form-control {
+  width: 300px;
+}
+
+@media screen and (max-width: 768px) {
+  .form-img-container {
+    display: none;
+  }
+}

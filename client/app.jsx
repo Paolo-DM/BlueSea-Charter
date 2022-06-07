@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/home';
 import Fleet from './pages/Fleet';
 import Excursions from './pages/Excursions';
+import SignUp from './pages/SignUp';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -36,6 +37,10 @@ export default class App extends React.Component {
     if (route.path === 'fleet') {
 
       return <Fleet />;
+    }
+    if (route.path === 'sign-up') {
+
+      return <SignUp />;
     }
     return <NotFound />;
   }

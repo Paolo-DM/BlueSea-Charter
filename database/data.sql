@@ -1,4 +1,4 @@
-insert into "users" ("userId", "firstName", "lastName", "email", "password", "phoneNumber")
+insert into "users" ("userId", "firstName", "lastName", "email", "hashedPassword", "phoneNumber")
 values (1, 'Paolo', 'Di Martino', 'paolo.dimartino@outlook.it', 'password1', '3331234567');
 
 insert into "boats" ("boatId", "name", "model", "speed", "motorization", "length", "capacity", "beds", "kitchen", "imageUrl", "internal1", "internal2", "internal3" )
