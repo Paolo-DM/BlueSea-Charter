@@ -1,8 +1,11 @@
 import React from 'react';
+import AppContext from '../lib/app-context';
 import './Navbar.css';
 
-function Navbar() {
-  return (
+export default class Navbar extends React.Component {
+  render() {
+    const { user, handleSignOut } = this.context;
+    return (
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
@@ -45,11 +48,25 @@ function Navbar() {
             <a className="nav-link" href="#">
               Account
             </a>
+
+             { user !== null &&
+               <button className="btn btn-sm btn-outline-light sign-btn" onClick={handleSignOut}>
+                 Sign out
+               </button>
+             }
+             { user === null &&
+               <>
+                 <a href="#sign-in" className="btn btn-sm btn-outline-light sign-btn mx-1">
+                   Sign In
+                 </a>
+               </>
+             }
+
           </div>
         </div>
       </div>
-    </nav>
-  );
+    </nav>);
+  }
 }
 
-export default Navbar;
+Navbar.contextType = AppContext;

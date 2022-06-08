@@ -22,8 +22,7 @@ const jsonMiddleware = express.json();
 app.use(jsonMiddleware);
 
 app.post('/api/auth/sign-up', (req, res, next) => {
-  console.log('body req', req.body);
-  const { userId, firstName, lastName, email, password, phoneNumber } = req.body;
+  const { firstName, lastName, email, password, phoneNumber } = req.body;
   if (!email || !password) {
     throw new ClientError(400, 'email and password are required fields');
   }
@@ -31,11 +30,11 @@ app.post('/api/auth/sign-up', (req, res, next) => {
     .hash(password)
     .then(hashedPassword => {
       const sql = `
-         insert into "users" ("userId", "firstName", "lastName","email", "hashedPassword","phoneNumber")
-         values ($1, $2, $3, $4, $5, $6)
+         insert into "users" ("firstName", "lastName", "email", "hashedPassword","phoneNumber")
+         values ($1, $2, $3, $4, $5)
          returning "userId", "email"
        `;
-      const params = [userId, firstName, lastName, email, hashedPassword, phoneNumber];
+      const params = [firstName, lastName, email, hashedPassword, phoneNumber];
       return db.query(sql, params);
     })
     .then(result => {

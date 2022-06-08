@@ -1,5 +1,5 @@
-insert into "users" ("userId", "firstName", "lastName", "email", "hashedPassword", "phoneNumber")
-values (1, 'Paolo', 'Di Martino', 'paolo.dimartino@outlook.it', 'password1', '3331234567');
+insert into "users" ( "firstName", "lastName", "email", "hashedPassword", "phoneNumber")
+values ('Paolo', 'Di Martino', 'paolo.dimartino@outlook.it', 'password1', '3331234567');
 
 insert into "boats" ("boatId", "name", "model", "speed", "motorization", "length", "capacity", "beds", "kitchen", "imageUrl", "internal1", "internal2", "internal3" )
 values (1, 'Diana', 'Sorrento 32 Hard Top', '32 Knots','2 x 315 hp Ebd - Yanmar', '9,60 mt', 10, '2 + 2', 1, '/img/fleet/diana/diana1.jpg','/img/fleet/diana/diana2.jpg','/img/fleet/diana/diana3.jpg','/img/fleet/diana/diana4.jpg'),

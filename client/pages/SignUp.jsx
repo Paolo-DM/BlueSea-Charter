@@ -22,7 +22,19 @@ export default function SignUp(props) {
   });
 
   const submitForm = data => {
-    console.log(data);
+    fetch('/api/auth/sign-up', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.json())
+      .then(resBody => {
+        alert('You are now registered on BlueSea Charter, welcome!');
+        window.location.hash = '#';
+      })
+      .catch(error => {
+        console.error('Error: ', error);
+      });
   };
 
   return (
@@ -33,14 +45,9 @@ export default function SignUp(props) {
             <h1>Welcome to BlueSea Charter</h1>
             <h5>
               Create an account or{' '}
-              <span>
-                <a
-                  className=" text-primary text-decoration-none"
-                  href="#log-in"
-                >
-                  log in
-                </a>
-              </span>
+              <a className="text-decoration-none" href="#sign-in">
+                log in
+              </a>
             </h5>
             <form onSubmit={handleSubmit(submitForm)}>
               <div className="form-group">
@@ -53,7 +60,7 @@ export default function SignUp(props) {
                   name="firstName"
                   placeholder="First name"
                 ></input>
-                <p className='error-msg'>{errors.firstName?.message}</p>
+                <p className="error-msg">{errors.firstName?.message}</p>
               </div>
               <div className="form-group">
                 <label htmlFor="lastName">Last Name</label>
@@ -65,7 +72,7 @@ export default function SignUp(props) {
                   name="lastName"
                   placeholder="Last name"
                 ></input>
-                <p className='error-msg'>{errors.lastName?.message}</p>
+                <p className="error-msg">{errors.lastName?.message}</p>
               </div>
 
               <div className="form-group">
@@ -78,7 +85,7 @@ export default function SignUp(props) {
                   name="phoneNumber"
                   placeholder="Insert your phone number"
                 ></input>
-                <p className='error-msg'>{errors.phoneNumber?.message}</p>
+                <p className="error-msg">{errors.phoneNumber?.message}</p>
               </div>
 
               <div className="form-group">
@@ -92,7 +99,7 @@ export default function SignUp(props) {
                   aria-describedby="emailHelp"
                   placeholder="Enter email"
                 />
-                <p className='error-msg'>{errors.email?.message}</p>
+                <p className="error-msg">{errors.email?.message}</p>
               </div>
               <div className="form-group">
                 <label htmlFor="password">Password</label>
@@ -104,11 +111,11 @@ export default function SignUp(props) {
                   name="password"
                   placeholder="Password"
                 />
-                <p className='error-msg'>{errors.password?.message}</p>
+                <p className="error-msg">{errors.password?.message}</p>
               </div>
 
               <button type="submit" className="btn btn-secondary">
-                Submit
+                Sign Up
               </button>
             </form>
           </div>
