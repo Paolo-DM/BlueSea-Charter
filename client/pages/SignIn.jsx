@@ -22,7 +22,6 @@ export default function SignIn(props) {
         } else {
           alert('You are now logged in, welcome to BlueSea Charter!');
           window.localStorage.setItem('bluesea-jwt', resBody.token);
-
           window.location.hash = '#';
         }
       })

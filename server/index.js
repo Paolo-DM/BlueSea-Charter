@@ -7,6 +7,7 @@ const ClientError = require('./client-error');
 const errorMiddleware = require('./error-middleware');
 const authorizationMiddleware = require('./authorization-middleware');
 const pg = require('pg');
+const stripe = require('stripe')('sk_test_51L8RbXCVTQvy7wnBL3igjem2u9Rc1ys2jG7FL3M3VKO3VpBBU3jKCpXvVzQKNrEVZGoXBqRcpkd6kxIQeI1wiChI00ZGE41aSm');
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,
@@ -16,9 +17,14 @@ const db = new pg.Pool({
 });
 
 const app = express();
+const publicPath = path.join(__dirname, 'public');
+
+if (process.env.NODE_ENV === 'development') {
+  app.use(require('./dev-middleware')(publicPath));
+}
 
 const jsonMiddleware = express.json();
-
+app.use(express.static(publicPath));
 app.use(jsonMiddleware);
 
 app.post('/api/auth/sign-up', (req, res, next) => {
@@ -77,19 +83,7 @@ app.post('/api/auth/sign-in', (req, res, next) => {
     .catch(err => next(err));
 });
 
-const publicPath = path.join(__dirname, 'public');
-
-if (process.env.NODE_ENV === 'development') {
-  app.use(require('./dev-middleware')(publicPath));
-}
-
-app.use(express.static(publicPath));
-
-app.get('/api/hello', (req, res) => {
-  res.json({ hello: 'world' });
-});
-
-app.get('/api/fleet', (req, res) => {
+app.get('/api/fleet', (req, res, next) => {
   const sql = `
     select *
     from "boats"
@@ -104,6 +98,50 @@ app.get('/api/fleet', (req, res) => {
         error: 'an unexpected error occurred'
       });
     });
+});
+
+app.get('/api/products/:productId', (req, res, next) => {
+  const productId = Number(req.params.productId);
+  if (!productId) {
+    throw new ClientError(400, 'productId must be a positive integer');
+  }
+  const sql = `
+     select *
+       from "products"
+      where "productId" = $1
+   `;
+  const params = [productId];
+  db.query(sql, params)
+    .then(result => {
+      if (!result.rows[0]) {
+        throw new ClientError(404, `cannot find product with productId ${productId}`);
+      }
+      res.json(result.rows[0]);
+    })
+    .catch(err => next(err));
+});
+
+/* ⛔ Every route after this middleware requires a token! ⛔ */
+
+app.use(authorizationMiddleware);
+
+const YOUR_DOMAIN = 'http://localhost:3000';
+
+app.post('/create-checkout-session', async (req, res) => {
+  const { priceId } = req.body;
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        price: priceId, // The price ID of the product to sell
+        quantity: 1
+      }
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/#success`,
+    cancel_url: `${YOUR_DOMAIN}/#canceled`
+  });
+
+  res.json({ url: session.url });
 });
 
 app.use(errorMiddleware);

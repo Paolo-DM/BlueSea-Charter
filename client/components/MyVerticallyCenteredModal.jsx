@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import './ModalGallery.css';
 
 function MyVerticallyCenteredModal(props) {
-  console.log('MODAL:', props);
   return (
     <Modal
       {...props}

@@ -13,7 +13,7 @@ export default function Excursions(props) {
       />
       <SectionsDivider text="Destinations" />
       <div className="container">
-        <PhotoGroup />
+        <PhotoGroup/>
       </div>
     </div>
   );

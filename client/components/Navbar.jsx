@@ -8,12 +8,15 @@ export default class Navbar extends React.Component {
     return (
     <nav className="navbar navbar-expand-md navbar-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <a className="navbar-brand d-flex align-items-center" href="#">
           <img
             src="../img/logo.png"
             className="logo-img"
           ></img>
         </a>
+          <a className="text-decoration-none text-white mx-2" aria-current="page" href="#">
+              BlueSea Charter
+            </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -30,16 +33,14 @@ export default class Navbar extends React.Component {
           id="navbarNavAltMarkup"
         >
           <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#">
-              Home
-            </a>
+
             <a className="nav-link" href="#excursions">
               Excursions
             </a>
             <a className="nav-link" href="#fleet">
               The Fleet
             </a>
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="#wedding">
               Wedding Proposal
             </a>
             <a className="nav-link" href="#">

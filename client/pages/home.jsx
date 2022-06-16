@@ -20,13 +20,13 @@ const firstRow = [
   {
     id: 3,
     title: 'Wedding Proposal',
-    description: 'A selection of group excursions will give you the opportunity to immerse yourself at 360 degrees in our territory',
+    description: 'If you are looking for the perfect spot along the Amalfi Coast for an unforgettable marriage proposal, this is the tour for you',
     imgUrl: '../img/cards/wedding.jpg'
   },
   {
     id: 4,
     title: 'Diving Center',
-    description: 'A selection of group excursions will give you the opportunity to immerse yourself at 360 degrees in our territory',
+    description: 'Immerse yourself with us along the splendid Amalfi coast, it will be a unique experience into a fantastic underwater world',
     imgUrl: '../img/cards/diving.jpg'
   }
 ];
@@ -98,9 +98,6 @@ const images = [
 ];
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

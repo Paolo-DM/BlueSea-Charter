@@ -30,7 +30,7 @@ export default function SignUp(props) {
       .then(response => response.json())
       .then(resBody => {
         alert('You are now registered on BlueSea Charter, welcome!');
-        window.location.hash = '#';
+        window.location.hash = '#sign-in';
       })
       .catch(error => {
         console.error('Error: ', error);

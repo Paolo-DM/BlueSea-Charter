@@ -10,6 +10,11 @@ import Excursions from './pages/Excursions';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Amalfi from './pages/Amalfi';
+import ExcursionDetails from './pages/ExcursionDetails';
+import Success from './pages/Success';
+import Canceled from './pages/Canceled';
+import Wedding from './pages/Wedding';
+import Footer from './components/Footer';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -53,8 +58,13 @@ export default class App extends React.Component {
     if (route.path === 'excursions') {
       return <Excursions />;
     }
+
     if (route.path === 'excursions/amalfi-coast') {
       return <Amalfi />;
+    }
+    if (route.path === 'products') {
+      const productId = route.params.get('productId');
+      return <ExcursionDetails productId={productId} />;
     }
     if (route.path === 'fleet') {
       return <Fleet />;
@@ -64,6 +74,15 @@ export default class App extends React.Component {
     }
     if (route.path === 'sign-in') {
       return <SignIn />;
+    }
+    if (route.path === 'success') {
+      return <Success />;
+    }
+    if (route.path === 'canceled') {
+      return <Canceled />;
+    }
+    if (route.path === 'wedding') {
+      return <Wedding productId={5}/>;
     }
     return <NotFound />;
   }
@@ -77,8 +96,10 @@ export default class App extends React.Component {
       <AppContext.Provider value={contextValue}>
       <>
         <Navbar/>
-        {this.renderPage()}
+
+        { this.renderPage() }
       </>
+      <Footer />
       </AppContext.Provider>
     );
   }

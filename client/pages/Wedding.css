@@ -1,0 +1,18 @@
+.wedding-quote-container {
+  padding: 1.5rem 0;
+}
+
+.wedding-quote {
+  border: 1px solid lightgray;
+  color: #929292;
+  letter-spacing: 0.2rem;
+}
+
+.wedding-text {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+.wedding-carousel-item {
+  height: 400px;
+}

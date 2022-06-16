@@ -1,0 +1,25 @@
+.order-status-container {
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 2px #c8d0d8;
+  margin: 0 auto;
+}
+
+.checkmark-div {
+  border-radius: 200px;
+  height: 200px;
+  width: 200px;
+  background: #f8faf5;
+  margin: 0 auto;
+}
+
+.checkmark {
+  color: #9abc66;
+  font-size: 100px;
+  line-height: 200px;
+}
+
+.fail-checkmark {
+  color: red;
+  font-size: 100px;
+}
