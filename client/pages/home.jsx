@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from '../components/Hero';
 import SectionsDivider from '../components/SectionsDivider';
 import RowOfCards from '../components/RowOfCards';
@@ -97,10 +97,33 @@ const images = [
 
 ];
 
-export default class Home extends React.Component {
+export default function Home() {
+  const [boats, setBoats] = React.useState([]);
+  const [services, setServices] = React.useState([]);
 
-  render() {
-    return (
+  useEffect(() => {
+    fetch('/api/fleet')
+      .then(response => response.json())
+      .then(data => {
+        setBoats(data);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/fleet')
+      .then(response => response.json())
+      .then(data => {
+        setBoats(data);
+      })
+      .catch(error => {
+        console.error('Fetch error:', error);
+      });
+  }, []);
+
+  return (
     <div>
       <Hero
         title="BlueSea Charter"
@@ -108,12 +131,13 @@ export default class Home extends React.Component {
         bkgdImgUrl='url("img/home/hero-home.jpg")'
       />
       <SectionsDivider text="Our services" />
+      <SectionsDivider text={boats[2]?.name} />
       <RowOfCards rowData={firstRow}/>
       <SectionsDivider text="Our boats" />
       <RowOfCards rowData={secondRow}/>
       <SectionsDivider text="Gallery" />
       <Carousel images={images}/>
     </div>
-    );
-  }
+  );
+
 }

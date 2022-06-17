@@ -100,6 +100,23 @@ app.get('/api/fleet', (req, res, next) => {
     });
 });
 
+app.get('/api/categories', (req, res, next) => {
+  const sql = `
+    select *
+    from "categories"
+  `;
+  db.query(sql)
+    .then(result => {
+      res.json(result.rows);
+    })
+    .catch(err => {
+      console.error(err);
+      res.status(500).json({
+        error: 'an unexpected error occurred'
+      });
+    });
+});
+
 app.get('/api/products/:productId', (req, res, next) => {
   const productId = Number(req.params.productId);
   if (!productId) {
