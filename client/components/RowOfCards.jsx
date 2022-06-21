@@ -9,7 +9,7 @@ function RowOfCards(props) {
     {
     props.data.map(card => {
       return (
-        <div key={card.id} className="col-lg-3 col-md-6">
+        <div key={card.categoryId ?? card.boatId} className="col-lg-3 col-md-6">
         <Card title={card.name} description={card.description} imgUrl={card.imageUrl}/>
         </div>
       );
