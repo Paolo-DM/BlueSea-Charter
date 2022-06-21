@@ -1,7 +1,6 @@
 import React from 'react';
 import './Carousel.css';
 import { images } from '../../server/public/img/home/carousel/index';
-console.log(images);
 
 class Carousel extends React.Component {
   constructor(props) {
