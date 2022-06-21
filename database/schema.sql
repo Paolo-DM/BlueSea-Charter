@@ -54,9 +54,9 @@ CREATE TABLE "public"."orders" (
 
 CREATE TABLE "public"."categories" (
 	"categoryId" serial NOT NULL,
-	"categoryName" TEXT NOT NULL,
-	"categoryDescription" TEXT NOT NULL,
-	"categoryUrl" TEXT NOT NULL,
+	"name" TEXT NOT NULL,
+	"description" TEXT NOT NULL,
+	"imageUrl" TEXT NOT NULL,
 	CONSTRAINT "categories_pk" PRIMARY KEY ("categoryId")
 ) WITH (
   OIDS=FALSE

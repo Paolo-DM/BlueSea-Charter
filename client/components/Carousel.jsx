@@ -1,5 +1,7 @@
 import React from 'react';
 import './Carousel.css';
+import { images } from '../../server/public/img/home/carousel/index';
+console.log(images);
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class Carousel extends React.Component {
   }
 
   renderDots() {
-    return this.props.images.map(image => {
+    return images.map(image => {
       return <i key={image.id}
                  className={this.state.selectedImg === image.id ? 'ph-circle-fill' : 'ph-circle-bold'}
                  onClick = {() => this.handleClick(image.id)}>
@@ -37,7 +39,7 @@ class Carousel extends React.Component {
   }
 
   rightClick() {
-    if (this.state.selectedImg === this.props.images.length) {
+    if (this.state.selectedImg === images.length) {
       this.setState({ selectedImg: 1 });
     } else {
       this.setState({ selectedImg: this.state.selectedImg + 1 });
@@ -47,7 +49,7 @@ class Carousel extends React.Component {
 
   leftClick() {
     if (this.state.selectedImg === 1) {
-      this.setState({ selectedImg: this.props.images.length });
+      this.setState({ selectedImg: images.length });
     } else {
       this.setState({ selectedImg: this.state.selectedImg - 1 });
     }
@@ -60,9 +62,9 @@ class Carousel extends React.Component {
     return (
        <div className=' carousel-container '>
          <i className="ph-caret-left-bold left-arrow" onClick={this.leftClick}></i>
-         <img className='carousel-img rounded img-fluid' src={this.props.images[selImg - 1].url}></img>
+         <img className='carousel-img rounded img-fluid' src={images[selImg - 1].url}></img>
          <i className="ph-caret-right-bold right-arrow" onClick={this.rightClick}></i>
-         <div key={this.props.images.id} className='progress-dots'>
+         <div key={images.id} className='progress-dots'>
            {this.renderDots()}
          </div>
        </div>
