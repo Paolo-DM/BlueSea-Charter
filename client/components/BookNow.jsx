@@ -20,6 +20,7 @@ function BookNow(props) {
         window.location = url;
       })
       .catch(error => {
+        alert('You need to be logged-in before continuing with your purchase');
         console.error(error);
       });
   }
