@@ -38,7 +38,7 @@ function ExcursionDetails(props) {
         <p>
           {product?.navigationAreas}
         </p>
-      <div className="w-25 mx-auto">
+      <div className="w-50 mx-auto">
         <BookNow product={product}/>
       </div>
       </div>
