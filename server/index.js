@@ -142,7 +142,7 @@ app.get('/api/products/:productId', (req, res, next) => {
 
 app.use(authorizationMiddleware);
 
-const YOUR_DOMAIN = 'http://localhost:3000';
+const YOUR_DOMAIN = 'https://bluesea-charter.herokuapp.com/';
 
 app.post('/create-checkout-session', async (req, res) => {
   const { priceId } = req.body;
