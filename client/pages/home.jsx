@@ -30,8 +30,6 @@ export default function Home() {
       });
   }, []);
 
-  console.log('SERVICES:', services);
-
   return (
     <div>
       <Hero

@@ -3,9 +3,9 @@ import React from 'react';
 function Footer() {
   return (
     <>
-<div className=" mt-5">
+<div className="mt-5">
   <footer
-          className="text-center text-lg-start text-white"
+          className="text-center text-lg-start text-white mt-auto"
           style={{ backgroundColor: '#083b4c' }}
           >
     <div className="container p-4 pb-0">
@@ -19,7 +19,7 @@ function Footer() {
             </p>
           </div>
 
-          <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <div className="col-lg-3 col-md-6  mb-4 mb-md-0">
             <h5 className="text-uppercase">Office</h5>
 
             <ul className="list-unstyled mb-0">
@@ -73,18 +73,10 @@ function Footer() {
         </p>
       </section>
 
-      <hr className="mb-4" />
+      <hr className="mb-0 pb-2" />
 
     </div>
-    <div
-         className="text-center p-3"
-         style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
-         >
-      © 2022 Copyright:
-      <a className="text-white" href="https://mdbootstrap.com/"
-         >BlueSeaCharter.com</a
-        >
-    </div>
+
   </footer>
 </div>
     </>
