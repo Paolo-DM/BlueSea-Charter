@@ -14,7 +14,7 @@ function Card(props) {
         <p className="card-text">
           {props.description}
         </p>
-        <a href="#" className="btn btn-outline-secondary">
+        <a href={`#${props.url ?? 'fleet'}` } className="btn btn-outline-secondary">
           More Details
         </a>
       </div>
