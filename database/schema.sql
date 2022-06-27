@@ -57,6 +57,7 @@ CREATE TABLE "public"."categories" (
 	"name" TEXT NOT NULL,
 	"description" TEXT NOT NULL,
 	"imageUrl" TEXT NOT NULL,
+	"url" TEXT NOT NULL,
 	CONSTRAINT "categories_pk" PRIMARY KEY ("categoryId")
 ) WITH (
   OIDS=FALSE
