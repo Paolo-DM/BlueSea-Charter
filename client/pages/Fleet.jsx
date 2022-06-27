@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import SectionsDivider from '../components/SectionsDivider';
 import BoatDescription from '../components/BoatDescription';
