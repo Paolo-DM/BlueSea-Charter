@@ -21,9 +21,9 @@ function Wedding(props) {
   return (
     <div>
       <Hero
-        title="Wedding Proposal"
-        subtitle="On a gulet on the Amalfi Coast"
-        bkgdImgUrl='url("img/wedding/wedding.jpeg")'
+        title={product?.title}
+        subtitle= {product?.subTitle}
+        bkgdImgUrl={product?.imageUrl}
       />
       <div className="wedding-quote-container">
         <h2 className="wedding-quote text-center py-4">
