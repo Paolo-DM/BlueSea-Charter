@@ -14,6 +14,7 @@ import ExcursionDetails from './pages/ExcursionDetails';
 import Success from './pages/Success';
 import Canceled from './pages/Canceled';
 import Wedding from './pages/Wedding';
+import Diving from './pages/Diving';
 import Footer from './components/Footer';
 
 export default class App extends React.Component {
@@ -83,6 +84,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'wedding') {
       return <Wedding productId={5}/>;
+    }
+    if (route.path === 'diving') {
+      return <Diving productId={6}/>;
     }
     return <NotFound />;
   }
