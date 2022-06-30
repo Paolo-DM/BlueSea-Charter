@@ -19,4 +19,5 @@ values (1, 750.00, 'price_1L8RkoCVTQvy7wnBkGCcFLni','The Amalfi Coast, UNESCO wo
 (1, 850.00, 'price_1L8uz6CVTQvy7wnBwGE0aujz','shortDescription', 'longDescription', 'url("/img/excursions/capri.jpg")', 'Capri, Blue Grotto / Faraglioni / Lì Galli Island', 'Capri',  'The simple enchantment of the island of Capri'),
 (1, 850.00, 'price_1L8uz6CVTQvy7wnBwGE0aujz','shortDescription', 'longDescription', 'url("/img/excursions/capri.jpg")', 'Capri, Blue Grotto / Faraglioni / Lì Galli Island', 'Capri',  'The simple enchantment of the island of Capri'),
 (2, 600.00, 'price_1LADtwCVTQvy7wnBjxMs2sGO', null, null, 'url("img/wedding/wedding.jpeg")', null, 'Wedding Proposal',  'On a gulet on the Amalfi Coast'),
-(4, 450.00, 'price_1LGNmSCVTQvy7wnBBUW0Pyvv',null, null, 'url("/img/diving/diving-banner.jpg")', null, 'Diving',  'A unique experience into a fantastic underwater world');
+(4, 150.00, 'price_1LGNmSCVTQvy7wnBBUW0Pyvv',null, null, 'url("/img/diving/diving-banner.jpg")', null, 'Diving',  'A unique experience into a fantastic underwater world'),
+(4, 400.00, 'price_1LGPuRCVTQvy7wnBK4WuZw70',null, null, 'url("/img/sunset/hero-sunset.jpg")', null, 'Sunset Cruise',  'A relaxing tour during the golden hour');
