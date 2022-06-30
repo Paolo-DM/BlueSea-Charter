@@ -15,6 +15,7 @@ import Success from './pages/Success';
 import Canceled from './pages/Canceled';
 import Wedding from './pages/Wedding';
 import Diving from './pages/Diving';
+import Sunset from './pages/Sunset';
 import Footer from './components/Footer';
 
 export default class App extends React.Component {
@@ -87,6 +88,9 @@ export default class App extends React.Component {
     }
     if (route.path === 'diving') {
       return <Diving productId={6}/>;
+    }
+    if (route.path === 'sunset') {
+      return <Sunset productId={7}/>;
     }
     return <NotFound />;
   }
